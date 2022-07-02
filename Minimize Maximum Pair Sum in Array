@@ -1,0 +1,15 @@
+class Solution(object):
+    def minPairSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        nums.sort()
+        left=0
+        right=len(nums)-1
+        sums=[]
+        while left<right:
+            sums.append(nums[right]+nums[left])
+            left+=1
+            right-=1
+        return max(sums)
