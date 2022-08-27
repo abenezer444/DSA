@@ -16,3 +16,24 @@ class Solution(object):
             fast = fast.next.next
             
         return slow   
+        
+        
+        #solution two with pointers
+class Solution(object):
+    def middleNode(self, head):
+        """
+        :type head: ListNode
+        :rtype: ListNode
+        """
+        checker1=0
+        checker2=0
+        head2=head
+        while head.next:
+            if checker1%2==0:
+                checker2+=1
+            checker1+=1
+            head=head.next
+        for i in range(checker2):
+            head2=head2.next
+        return head2
+
