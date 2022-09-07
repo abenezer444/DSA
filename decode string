@@ -1,0 +1,23 @@
+class Solution(object):
+    def decodeString(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        stack=[]
+        for i in s:
+            if i!=']':
+                stack.append(i)
+            if i==']':
+                substring=''
+                while stack and not stack[-1].isdigit() and stack[-1]!='[':
+                    substring=stack.pop()+substring
+                repeat=''
+                if stack and stack[-1]=='[':
+                    stack.pop()
+                    while stack and stack[-1].isdigit():
+                        repeat=stack.pop()+repeat
+                    stack.append(int(repeat)*substring)
+        return ''.join(stack)
+                
+        
