@@ -1,0 +1,23 @@
+class Solution(object):
+    def reverseParentheses(self, s):
+        """
+        :type s: str
+        :rtype: str
+        """
+        stack = []
+        i = 0
+        while i < len(s):
+            while i < len(s) and s[i] != ")":
+                stack.append(s[i])
+                i += 1
+            temp = ""
+            if i < len(s) and s[i] == ")":
+                while stack[-1] != "(":
+                    temp += stack.pop()
+                i += 1
+                stack.pop()
+            if temp != "":
+                for letter in temp:
+                    stack.append(letter)
+        return "".join(stack)
+        
