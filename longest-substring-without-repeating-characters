@@ -1,0 +1,17 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        start=0
+        longest=0
+        hashT={}
+        for i in range(len(s)):
+            letter=s[i]
+            while letter in hashT.keys():
+                hashT.pop(s[start])
+                start+=1
+                
+            hashT[letter]=1
+            longest=max(longest,i-start+1)
+        return longest
+            
+            
+        
