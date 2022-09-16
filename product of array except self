@@ -1,0 +1,23 @@
+class Solution(object):
+    def productExceptSelf(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        product=1
+        prefix=[1]*(len(nums)+1)
+        postfix=[1]*(len(nums)+1)
+        for i in range(len(nums)):
+            product*=nums[i]
+            prefix[i+1]= product
+        product=1
+        for i in range(len(nums)-1,-1,-1):
+            product*=nums[i]
+            postfix[len(postfix)-i-1]=product
+        output=[0]*len(nums)
+        for i in range(len(nums)):
+            index=(len(postfix)-(i+2))
+            output[i]=prefix[i]*postfix[index]
+        return output
+        
+        
