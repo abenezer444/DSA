@@ -1,0 +1,14 @@
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        pairs=collections.Counter(nums)
+        pair=[(count,nums) for (nums,count) in pairs.items()]
+        heapq._heapify_max(pair)
+        res=[]
+        for i in range(k):
+            res.append(heapq._heappop_max(pair)[1])
+        return res
+        
+        
+        # the heapq._heapify_max is not in the puplic python documentation but it is used to create a max heap implementation using the heapq module.
+        # instead of using this we can use the normal min heap and remove the least occuring elements then return the remaining k elements. But the former approch is efficient since it only works in the desired most frequen elements
+        
