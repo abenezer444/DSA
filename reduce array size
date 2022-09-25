@@ -1,0 +1,19 @@
+class Solution(object):
+    def minSetSize(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: int
+        """
+        ans=0
+        length=len(arr)/2
+        hashT={}
+        for i in arr:
+            hashT[i]=1+hashT.get(i,0)
+        heap=[]
+        for num,count in hashT.items():
+            heapq.heappush(heap,(-count,num))
+        while length>0:
+            length+=heapq.heappop(heap)[0]
+            ans+=1
+        return ans
+        
