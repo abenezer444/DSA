@@ -1,0 +1,14 @@
+class Solution:
+    def pancakeSort(self, arr: List[int]) -> List[int]:
+        x=len(arr)
+        ans=[]
+        for indx in range(x):
+            max_=max(arr[:x-indx])
+            max_index=arr.index(max_)+1
+            arr[:max_index]=reversed(arr[:max_index])
+            ans.append(max_index)
+            arr[:x-indx]=reversed(arr[:x-indx])
+            ans.append(x-indx)
+        return ans
+            
+        
