@@ -1,0 +1,60 @@
+#inefficient solution
+class Solution(object):
+    def nextGreaterElement(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        checker=[-1]*len(nums1)
+        for i in range(len(nums1)):
+            for j in range(len(nums2)):
+                if nums1[i]==nums2[j]:
+                    while j<len(nums2):
+                        if nums1[i]<nums2[j]:
+                            checker[i]=nums2[j]
+                            break
+                        j+=1
+        return checker
+                
+   #less inefficient solution O(n^2)
+   class Solution(object):
+    def nextGreaterElement(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        ans=[-1]*len(nums1)
+        indexMap={num:idx for idx,num in  enumerate(nums1)}
+        for i in range(len(nums2)):
+            if nums2[i] in indexMap:
+                temp=nums2[i]
+                while i<len(nums2):
+                    if nums2[i]>temp:
+                        ans[indexMap[temp]]=nums2[i]
+                        break
+                    i+=1
+        return ans
+     #efficient solution linear time 
+     class Solution(object):
+    def nextGreaterElement(self, nums1, nums2):
+        """
+        :type nums1: List[int]
+        :type nums2: List[int]
+        :rtype: List[int]
+        """
+        ans=[-1]*len(nums1)
+        indexMap={num:idx for idx,num in  enumerate(nums1)}
+        stack=[]
+        for i in nums2:
+            
+            while stack and stack[-1]<i:
+                ans[indexMap[stack.pop()]]=i
+            if i in nums1:
+                stack.append(i)
+        return ans
+            
+        
+            
+        
