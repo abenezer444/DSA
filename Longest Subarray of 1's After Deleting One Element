@@ -1,0 +1,29 @@
+class Solution(object):
+    def longestSubarray(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        if sum(nums)==len(nums):
+            return len(nums)-1
+        zeros=0
+        l=0
+        r=0
+        res=0
+        while l<=r<len(nums):
+            while zeros<2 and r<len(nums):
+                if nums[r]==0:
+                    zeros+=1
+                r+=1
+            res=max(res,r-l-zeros)
+            while zeros==2 and l<len(nums):
+                if nums[l]==0:
+                    zeros-=1
+                l+=1
+        return res
+                
+            
+                
+                
+                
+        https://leetcode.com/problems/longest-subarray-of-1s-after-deleting-one-element/
