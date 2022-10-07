@@ -1,0 +1,33 @@
+class Solution(object):
+    def findAnagrams(self, s, p):
+        """
+        :type s: str
+        :type p: str
+        :rtype: List[int]
+        """
+        if len(p)>len(s):
+            return []
+        res=[]
+        sMap={}
+        pMap={}
+        #create a fixed window
+        for i in range(len(p)):
+            pMap[p[i]]=1+pMap.get(p[i],0)#so this is the fixed window
+            sMap[s[i]]=1+sMap.get(s[i],0)
+        
+        
+        if sMap==pMap:
+            res.append(0)    
+        left=0
+        for right in range(len(p),len(s)):
+            sMap[s[left]]-=1
+            sMap[s[right]]=1+sMap.get(s[right],0)
+            if  sMap[s[left]]==0:
+                sMap.pop(s[left])
+            left+=1
+            if pMap==sMap:
+                res.append(left)
+            
+            
+        return res
+        
