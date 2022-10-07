@@ -1,0 +1,28 @@
+class Solution(object):
+    def maxVowels(self, s, k):
+        """
+        :type s: str
+        :type k: int
+        :rtype: int
+        """
+        #sum(d.values())
+        vowels=['a','e','i','o','u']
+        vMap={i:0 for i in vowels}
+        for letter in range(k):
+            if s[letter] in vowels:
+                vMap[s[letter]]+=1
+        temp=sum(vMap.values())
+        res=sum(vMap.values())
+        l=0
+        r=k
+        while r<len(s):
+            if s[l] in vowels:
+                res-=1
+            l+=1
+            if s[r] in vowels:
+                res+=1
+            r+=1
+            temp=max(res,temp)
+                
+        return temp
+        https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
