@@ -20,15 +20,14 @@ class Solution(object):
                     break
             nums[pivot+1:]=reversed(nums[pivot+1:])
             return nums
-        for i in range(k):
+        for i in range(k):#finding the next permutation n times
             helper(nums)
-        #find the index of the first unmatching num, then substract it form the last index
         for i in range(len(nums)-1):
             if nums[i]!=num[i]:
                 r=i+1
-                while nums[r]!=num[i]:
+                while nums[r]!=num[i]:#finding the number at the correct position
                     r+=1
-                while r!=i:    
+                while r!=i:#placing the number at it's proper positon through adjacent swaps    
                     nums[r],nums[r-1]=nums[r-1],nums[r]
                     count+=1
                     r-=1
