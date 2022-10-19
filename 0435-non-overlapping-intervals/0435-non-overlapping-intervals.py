@@ -5,7 +5,6 @@ class Solution(object):
         :rtype: int
         """
         intervals.sort(key=lambda i:i[0])
-        print(intervals)
         last=intervals[0][1]
         count=0
         for i in range(1,len(intervals)):
