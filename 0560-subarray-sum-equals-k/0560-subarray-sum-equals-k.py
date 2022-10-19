@@ -5,17 +5,19 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        res=0
-        sums={0:1}
-        summ=0
-        for i in range(len(nums)):
-            summ+=nums[i]
-            diff=summ-k
-            res+=sums.get(diff,0)
-            sums[summ]=1+sums.get(summ,0)
+        result=0
+        prefix=0
+        hashT={0:1}
+        for i in nums:
+            prefix+=i
+            removedSubArr=prefix-k
+            if removedSubArr in hashT:
+                result+=hashT[removedSubArr]
+            if prefix in hashT:
+                hashT[prefix]+=1
+            else: hashT[prefix]=1
+
+       
+        return result
             
-            
-        return res
         
-                
-                
