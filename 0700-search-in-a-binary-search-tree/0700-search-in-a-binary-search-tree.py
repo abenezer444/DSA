@@ -17,8 +17,10 @@ class Solution(object):
                 if node.val==val:
                     self.ans=node
                     return
-                preorder(node.left)
-                preorder(node.right)
+                if node.val>val:
+                    preorder(node.left)
+                else:
+                    preorder(node.right)
         preorder(root)
         return self.ans
             
