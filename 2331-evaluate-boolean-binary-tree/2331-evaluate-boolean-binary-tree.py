@@ -22,6 +22,7 @@ class Solution(object):
                 else:
                     return check(node.right) and check(node.left)
             else: return True
-        return check(root)
+        self.ans=check(root)
+        return self.ans
                 
         
