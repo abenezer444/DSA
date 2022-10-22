@@ -14,10 +14,11 @@ class Solution(object):
         self.ans=None
         def preorder(node):
             if node:
+                preorder(node.left)
                 if node.val==val:
                     self.ans=node
                     return
-                preorder(node.left)
+                
                 preorder(node.right)
         preorder(root)
         return self.ans
