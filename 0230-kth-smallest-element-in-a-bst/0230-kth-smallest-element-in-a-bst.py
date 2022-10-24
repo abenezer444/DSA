@@ -11,11 +11,19 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        self.ans=[]
-        def inorder(node):
-            if node:
-                inorder(node.left)
-                self.ans.append(node.val)
-                inorder(node.right)
-        inorder(root)
-        return self.ans[k-1]
+        #iterative solution
+        stop=0
+        stack=[]
+        cur=root
+        while cur or stack:
+            #go left as far as possible and add the nodes to the stack
+            while cur:
+                stack.append(cur)
+                cur=cur.left
+            cur=stack.pop()
+            stop+=1
+            if k==stop:
+                return cur.val
+            #check the right
+            cur=cur.right
+            
