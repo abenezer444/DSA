@@ -14,10 +14,9 @@ class Solution(object):
         for i in s:
             if i in opening:
                 stack.append(i)
+            elif stack and pmap[i]==stack[-1]:
+                stack.pop()
             else:
-                if  stack and pmap[i]==stack[-1]:
-                    stack.pop()
-                else:
-                    return False
+                return False
         return not bool(stack)
         
