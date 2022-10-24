@@ -5,7 +5,7 @@ class Solution(object):
         :rtype: bool
         """
         stack=[]
-        opening=['(','[','{']
+        opening={'(':0,'[':0,'{':0}
         #add openings to the stack
         #if not opening, check if current punc value and the end of the stack are the same
         #if not same return false
