@@ -4,7 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: int
         """
-        setAlpha={1}
+        setAlpha=set()
         counter=0
         left=0
         right=0
@@ -16,7 +16,7 @@ class Solution(object):
             if right<len(s) and s[right] not in setAlpha:
                 setAlpha.add(s[right])
             
-            if len(setAlpha)==4:
+            if len(setAlpha)==3:
                     counter+=1
                     setAlpha.remove(s[left])
                     left+=1
