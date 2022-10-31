@@ -6,11 +6,11 @@ class Solution(object):
         """
         count=0
         for i in range(len(s)-2):
-            string=s[i]
+            string=set(s[i])
             for j in range(i+1,i+3):
                 if s[j] in string:
                     break
-                string+=s[j]
+                string.add(s[j])
             if len(string)==3:
                 count+=1
         return count
