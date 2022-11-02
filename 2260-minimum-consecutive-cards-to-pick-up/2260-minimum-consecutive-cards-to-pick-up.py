@@ -4,13 +4,14 @@ class Solution(object):
         :type cards: List[int]
         :rtype: int
         """
-        minLen=len(cards)+1
+        n=len(cards)+1
+        minLen=n
         cardMap={}
         for idx,card in enumerate(cards):
             if card in cardMap:
                 minLen=min(minLen,idx-cardMap[card]+1)
             cardMap[card]=idx
-        if minLen>len(cards):
+        if minLen==n:
             return -1
         return minLen
     
