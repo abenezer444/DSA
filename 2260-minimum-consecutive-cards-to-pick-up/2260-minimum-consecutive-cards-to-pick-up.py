@@ -4,14 +4,13 @@ class Solution(object):
         :type cards: List[int]
         :rtype: int
         """
-        tb={}
-        res=20000000
-        for idx,num in enumerate(cards):
-            if num in tb:
-                res=min(idx-tb[num]+1,res)
-                tb[num]=idx
-            else: tb[num]=idx
-        if res==20000000:
+        minLen=len(cards)+1
+        cardMap={}
+        for idx,card in enumerate(cards):
+            if card in cardMap:
+                minLen=min(minLen,idx-cardMap[card]+1)
+            cardMap[card]=idx
+        if minLen>len(cards):
             return -1
-        return res
-        
+        return minLen
+    
