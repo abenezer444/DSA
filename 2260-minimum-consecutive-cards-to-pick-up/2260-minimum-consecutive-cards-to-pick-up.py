@@ -4,14 +4,13 @@ class Solution(object):
         :type cards: List[int]
         :rtype: int
         """
-        n=len(cards)+1
-        minLen=n
+        minLen=float('inf')
         cardMap={}
         for idx,card in enumerate(cards):
             if card in cardMap:
                 minLen=min(minLen,idx-cardMap[card]+1)
             cardMap[card]=idx
-        if minLen==n:
+        if minLen==float('inf'):
             return -1
         return minLen
     
