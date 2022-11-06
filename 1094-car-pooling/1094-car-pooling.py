@@ -5,7 +5,6 @@ class Solution(object):
         :type capacity: int
         :rtype: bool
         """
-        trips.sort(key=lambda t:t[1])
         events=[0]*1001
         for trip in trips:
             events[trip[1]]+=trip[0]
