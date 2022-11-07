@@ -4,14 +4,21 @@ class Solution(object):
         :type nums: List[int]
         :rtype: bool
         """
+        '''
+        find a k value that is less than the top of my stack,my stack being a mono decreasing having the y value at the top and i value somewhere before it
+        nums=[3,1,4,2]
+        min=1
+        [(4,1)]
+        
+        '''
         stack=[]
-        curMin=nums[0]
-        for i in nums[1:]:
-            while stack and i>=stack[-1][0]:
+        minVal=nums[0]
+        for num in nums:
+            while stack and stack[-1][0]<=num:
                 stack.pop()
-            if stack and i>stack[-1][1]:
+            if stack and stack[-1][1]<num:
                 return True
-            stack.append([i,curMin])
-            curMin=min(i,curMin)
+            stack.append((num,minVal))
+            minVal=min(num,minVal)
         return False
         
