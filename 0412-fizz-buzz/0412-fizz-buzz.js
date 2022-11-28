@@ -3,8 +3,8 @@
  * @return {string[]}
  */
 var fizzBuzz = function(n) {
-    var ans=[]
-    for (var i=1; i<=n; i+=1){
+    let ans=[]
+    for (let i=1; i<=n; i+=1){
        if (i%3==0 && i%5==0){
            ans.push("FizzBuzz")
        }else if (i%3==0){
