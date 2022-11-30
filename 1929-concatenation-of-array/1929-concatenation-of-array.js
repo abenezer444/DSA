@@ -3,13 +3,11 @@
  * @return {number[]}
  */
 var getConcatenation = function(nums) {
-    var len=[]
+    var len=nums.slice()
     for (let i of nums){
         len.push(i)
     }
-    for (let i of nums){
-        len.push(i)
-    }
+  
     
     
     
