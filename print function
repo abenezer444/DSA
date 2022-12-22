@@ -1,0 +1,11 @@
+if __name__ == '__main__':
+    n = int(input())
+    ans=1
+    for i in range(2,n+1):
+        if i<10:
+            ans=ans*10+i
+        elif i<100:
+            ans=ans*100+i
+        else:
+            ans=ans*1000+i
+    print(ans)
