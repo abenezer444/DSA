@@ -1,0 +1,9 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+from collections import Counter
+k=int(input())
+lst=input().split()
+count=Counter(lst)
+for key in count:
+    if count[key]==1:
+        print(key)
+        break
