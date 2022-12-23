@@ -8,10 +8,11 @@ class Solution:
                 temp.append(orderMap[letter])
             inNumber.append(temp)
         
-        unsorted=inNumber.copy()   
-        inNumber.sort()
+        for i in range(1,len(inNumber)):
+            if  (inNumber[i-1]>inNumber[i]):
+                return False
        
-        return inNumber==unsorted
+        return True
                 
         
         
