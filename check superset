@@ -1,0 +1,12 @@
+# Enter your code here. Read input from STDIN. Print output to STDOUT
+ans=True
+s=input()
+superSet=set(s.split())
+n=int(input())
+for i in range(n):
+    setS=input()
+    setN=set(setS.split())
+    if not (setN.issubset(superSet) and len(setN)<len(superSet)):
+        ans=False
+        break
+print(ans)
