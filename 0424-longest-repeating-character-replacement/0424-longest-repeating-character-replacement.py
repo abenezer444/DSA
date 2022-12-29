@@ -5,19 +5,20 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        res=0
-        alpha=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-        for target in alpha:
-            other=0
-            l=0
-            for r in range(len(s)):
-                if s[r]!=target:
-                    other+=1
-                while other>k:
-                    if s[l]!=target:
-                        other-=1
-                    l+=1
-                res=max(res,r-l+1)
-        return res
-
+        ans=0
+        maxFreq=0
+        left=0
+        countMap={}
+        for right in range(len(s)):
+            countMap[s[right]]=1+countMap.get(s[right],0)
+            maxFreq=max(countMap[s[right]],maxFreq)
+            while k+maxFreq <right-left+1 and left<len(s):
+                countMap[s[left]]-=1
+                left+=1
+            ans=max(ans,right-left+1)
+        return ans
+            
+                
+            
+        
         
