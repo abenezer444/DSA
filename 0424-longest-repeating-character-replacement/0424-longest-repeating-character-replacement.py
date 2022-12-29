@@ -8,11 +8,11 @@ class Solution(object):
         ans=0
         maxFreq=0
         left=0
-        countMap={}
+        countMap=defaultdict(int)
         
         for right in range(len(s)):
             
-            countMap[s[right]]=1+countMap.get(s[right],0)
+            countMap[s[right]]+=1
             maxFreq=max(countMap[s[right]],maxFreq)
             
             while k+maxFreq <right-left+1 and left<len(s):
