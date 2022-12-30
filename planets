@@ -1,0 +1,9 @@
+from collections import Counter
+t=int(input())
+for i in range(t):
+    ans=0
+    size,cost=map(int,input().split())
+    nums=Counter(map(int,input().split()))
+    for count in nums.values():
+        ans+=min(cost,count)
+    print(ans)
