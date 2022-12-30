@@ -1,0 +1,13 @@
+t=int(input())
+for i in range(t):
+    size1,size2=input().split()
+    value={'L':2,'M':1,'S':-1}
+
+    biggness1=value[size1[-1]]*len(size1)
+    biggness2=value[size2[-1]]*len(size2)
+    if biggness1>biggness2:
+        print('>')
+    elif biggness1<biggness2:
+        print('<')
+    else:
+        print('=')
