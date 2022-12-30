@@ -1,0 +1,16 @@
+t=int(input())
+for i in range(t):
+    lenght=int(input())
+    nums=input().split()
+    string=input()
+    numMap={}
+    noFlag=False
+    for i in range(len(nums)):
+        if nums[i] not in numMap:
+            numMap[nums[i]]=string[i]
+        elif numMap[nums[i]]!=string[i]:
+            print('NO')
+            noFlag=True
+            break
+    if not noFlag:
+        print('YES')
