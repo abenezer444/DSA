@@ -8,8 +8,7 @@ class Solution:
         for row in range(rows):
             for column in range(columns):
                 reversedGrid[column][row]=grid[row][column]
-        print(grid)
-        print(reversedGrid)
+      
         for gri in grid:
             if gri in reversedGrid:
                 count+=reversedGrid.count(gri)
