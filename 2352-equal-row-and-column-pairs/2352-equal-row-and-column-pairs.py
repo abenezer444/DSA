@@ -10,8 +10,7 @@ class Solution:
                 reversedGrid[column][row]=grid[row][column]
       
         for gri in grid:
-            if gri in reversedGrid:
-                count+=reversedGrid.count(gri)
+            count+=reversedGrid.count(gri)
         return count
         
         
