@@ -8,10 +8,11 @@ class Solution:
                     return idx
         for dirr in paths:
             listDir=dirr.split()
-            for i in range(1,len(listDir)):
-                text=(listDir[0]+'/'+listDir[i][:files(listDir[i])])
-                file=listDir[i][files(listDir[i])+1:-1]
-                fileMap[file].append(text)
+            for position in range(1,len(listDir)):
+                index=files(listDir[position])
+                directory=(listDir[0]+'/'+listDir[position][:index])
+                file=listDir[position][index+1:-1]
+                fileMap[file].append(directory)
         for item in fileMap.values():
             if len(item)>1:
                 ans.append(item)
