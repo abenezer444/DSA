@@ -13,7 +13,6 @@ class Solution:
                 else:
                     indexCharMap[index].append(' ')
         result=[]
-        print(indexCharMap)
         for word in indexCharMap.values():
             result.append("".join(word).rstrip())
         return result
