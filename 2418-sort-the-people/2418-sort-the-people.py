@@ -5,19 +5,17 @@ class Solution(object):
         :type heights: List[int]
         :rtype: List[str]
         """
-        pair=[(heights[i],names[i]) for i in range(len(names))]
-        for i in range(len(pair)):
+        for i in range(len(names)):
             flag=True
-            for j in range(len(pair)-1):
-                if pair[j]<pair[j+1]:
-                    pair[j],pair[j+1]=pair[j+1],pair[j]
+            for j in range(len(names)-1):
+                if heights[j]<heights[j+1]:
+                    heights[j],heights[j+1]=heights[j+1],heights[j]
+                    names[j],names[j+1]=names[j+1],names[j]
                     flag=False
             if flag:
                 break
                 
                     
-        ans=[]
-        for num in pair:
-            ans.append(num[1])
-        return ans
+       
+        return names
         
