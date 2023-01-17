@@ -5,16 +5,17 @@ class Solution(object):
         :type heights: List[int]
         :rtype: List[str]
         """
-        for i in range(len(names)):
-            flag=True
-            for j in range(len(names)-1):
-                if heights[j]<heights[j+1]:
-                    heights[j],heights[j+1]=heights[j+1],heights[j]
-                    names[j],names[j+1]=names[j+1],names[j]
-                    flag=False
-            if flag:
-                break
+        for minIndex in range(len(names)):
+            minindex=minIndex
+            for num in range(minIndex+1,len(names)):
+                if heights[minindex]<heights[num]:
+                    minindex=num
+                    minNum=heights[num]
+            names[minIndex],names[minindex]=names[minindex],names[minIndex]
+            heights[minIndex],heights[minindex]=heights[minindex],heights[minIndex]
                 
+                
+        
                     
        
         return names
