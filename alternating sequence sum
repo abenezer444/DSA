@@ -1,0 +1,18 @@
+t=int(input())
+for _ in range(t):
+    length=int(input())
+    nums=list(map(int,input().split()))
+    stack=[]
+    for num in nums:
+        if  stack and num*stack[-1]>0:
+            stack.append(max(stack.pop(),num))
+        else:
+            stack.append(num)
+
+    
+    print(sum(stack))
+    
+
+
+        
+
