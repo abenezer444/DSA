@@ -1,0 +1,13 @@
+len1,len2=map(int,input().split())
+nums1=list(map(int,input().split()))
+nums2=list(map(int,input().split()))
+pointer1=0
+pointer2=0
+ans=[]
+while pointer2<len2:
+    while pointer1<len1 and nums1[pointer1]<nums2[pointer2]:
+        pointer1+=1
+    ans.append(pointer1)
+    pointer2+=1
+print(" ".join(map(str,ans)))
+    
