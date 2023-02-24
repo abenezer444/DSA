@@ -11,12 +11,12 @@ class Solution(object):
         #if not same return false
         #else pop stack
         pmap={')':'(',']':'[','}':'{'}
-        for i in s:
-            if i in opening:
-                stack.append(i)
-            elif stack and pmap[i]==stack[-1]:
+        for mark in s:
+            if mark in opening:
+                stack.append(mark)
+            elif stack and pmap[mark]==stack[-1]:
                 stack.pop()
             else:
                 return False
-        return not bool(stack)
+        return not (stack)
         
