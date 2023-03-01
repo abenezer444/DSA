@@ -5,19 +5,19 @@ class Solution(object):
         :type k: int
         :rtype: int
         """
-        result=0
-        prefix=0
-        hashT={0:1}
-        for i in nums:
-            prefix+=i
-            removedSubArr=prefix-k
-            if removedSubArr in hashT:
-                result+=hashT[removedSubArr]
-            if prefix in hashT:
-                hashT[prefix]+=1
-            else: hashT[prefix]=1
+        count=0
+        curSum = 0
+        sumCountMap=defaultdict(int)
+        sumCountMap[0] = 1
+        for right in range(len(nums)):
+            
+            
+            curSum += nums[right]
+            diff = curSum - k
 
-       
-        return result
+            count += sumCountMap[diff]
+            sumCountMap[curSum] += 1
+        return count
+            
             
         
