@@ -5,13 +5,13 @@ class Solution:
                 return "0"
             return nthBinaryString(n-1) +'1' + invertRevert(nthBinaryString(n-1))
         def invertRevert(string):
-            temp=[]
+            temp=deque()
             for bit in string:
                 if bit=="1":
-                    temp.append('0')
+                    temp.appendleft('0')
                 else:
-                    temp.append('1')
-            return "".join(temp[::-1])
+                    temp.appendleft('1')
+            return "".join(temp)
 
         return nthBinaryString(n)[k-1]
     
