@@ -3,7 +3,8 @@ class Solution:
         def nthBinaryString(n):
             if n==1:
                 return "0"
-            return nthBinaryString(n-1) +'1' + invertRevert(nthBinaryString(n-1))
+            temp = nthBinaryString(n-1)
+            return temp +'1' + invertRevert(temp)
         def invertRevert(string):
             temp=deque()
             for bit in string:
