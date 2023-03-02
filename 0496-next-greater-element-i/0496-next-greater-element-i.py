@@ -5,16 +5,15 @@ class Solution(object):
         :type nums2: List[int]
         :rtype: List[int]
         """
-        ans=[-1]*len(nums1)
-        indexMap={num:idx for idx,num in  enumerate(nums1)}
-        for i in range(len(nums2)):
-            if nums2[i] in indexMap:
-                temp=nums2[i]
-                while i<len(nums2):
-                    if nums2[i]>temp:
-                        ans[indexMap[temp]]=nums2[i]
-                        break
-                    i+=1
+        ans = [-1]*len(nums1)
+        indexMap = { num : index for index,num in enumerate(nums1)}
+        stack = []
+        for num in nums2:
+            while stack and stack[-1] < num:
+                popped = stack.pop()
+                if popped in indexMap:
+                    ans[indexMap[popped]] = num
+            stack.append(num)
         return ans
             
         
