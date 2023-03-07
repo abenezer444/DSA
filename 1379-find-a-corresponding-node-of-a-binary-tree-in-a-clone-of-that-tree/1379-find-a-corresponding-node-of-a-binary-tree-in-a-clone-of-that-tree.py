@@ -1,34 +1,21 @@
 # Definition for a binary tree node.
-# class TreeNode(object):
+# class TreeNode:
 #     def __init__(self, x):
 #         self.val = x
 #         self.left = None
 #         self.right = None
 
-class Solution(object):
-    def getTargetCopy(self, original, cloned, target):
-        """
-        :type original: TreeNode
-        :type cloned: TreeNode
-        :type target: TreeNode
-        :rtype: TreeNode
-        """
-        def inorder(node1,node2):
-            if node1 and node2:
-                #go left
-                inorder(node1.left,node2.left)
-                #perform action
-                if node1 is target:
-                    self.ans=node2
-                #go right
-                inorder(node1.right,node2.right)
-        inorder(original,cloned)
+class Solution:
+    def getTargetCopy(self, original: TreeNode, cloned: TreeNode, target: TreeNode) -> TreeNode:
+        def dfs(node):
+            if node:
+               
+                if node.val == target.val:
+                    self.ans = node
+                else:
+                    dfs(node.right)
+                    dfs(node.left)
+        dfs(cloned)
+            
         return self.ans
-    
-        
-            
-                
-       
-                
-            
         
