@@ -11,10 +11,10 @@ class Solution:
         def traverse(node,arr):
             if not node:
                 arr.append(None)
-                return arr
-            arr.append(node.val)
-            traverse(node.left,arr)
-            traverse(node.right,arr)
+            else:
+                arr.append(node.val)
+                traverse(node.left,arr)
+                traverse(node.right,arr)
             return arr
         
             
