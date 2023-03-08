@@ -13,8 +13,7 @@ class Solution:
                 traverse(node.left,depth+1)
                 traverse(node.right,depth+1)
             return node
-        depth = 0
-        traverse(root,depth)
+        traverse(root,0)
    
   
         return nodeMap.values()
