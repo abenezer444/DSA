@@ -5,12 +5,13 @@ class Solution:
         
         def backtrack ( index ,track = []):
             
-            if index >= len(nums):
-                
-                if len(track) == k:
-                    result.append( track [:])
-                
+            
+            if len(track) == k:
+                result.append( track [:])
                 return
+            if index >= len(nums):
+                return
+                
             
             track.append(nums[index])
             backtrack(index + 1,track)
