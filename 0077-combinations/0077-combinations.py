@@ -3,7 +3,7 @@ class Solution:
         result = []
         nums =  [ i for i in range( 1, n + 1)]
         
-        def backtrack ( nums, index , k , track = []):
+        def backtrack ( index , k , track = []):
             
             if index >= len(nums):
                 
@@ -13,10 +13,10 @@ class Solution:
                 return
             
             track.append(nums[index])
-            backtrack(nums, index + 1, k, track)
+            backtrack(index + 1, k, track)
             
             track.pop()
-            backtrack(nums, index + 1, k, track)
-        backtrack(nums,0,k)
+            backtrack(index + 1, k, track)
+        backtrack(0,k)
         return result
         
