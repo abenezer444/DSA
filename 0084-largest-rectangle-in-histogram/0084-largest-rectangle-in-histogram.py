@@ -4,7 +4,7 @@ class Solution(object):
         :type heights: List[int]
         :rtype: int
         """
-        
+        heights.append(-1)
         stack = []
         maxArea = 0
         
@@ -18,9 +18,9 @@ class Solution(object):
             
             stack.append([leftBound,height])
         
-        for i in range(len(stack)):
-            leftBound , height = stack[i]
-            maxArea = max(maxArea , (len(heights) - leftBound)*height  )
+        # for i in range(len(stack)):
+        #     leftBound , height = stack[i]
+        #     maxArea = max(maxArea , (len(heights) - leftBound)*height  )
         return maxArea
             
             
