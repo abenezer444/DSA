@@ -10,18 +10,20 @@ class Solution(object):
         :type root: TreeNode
         :rtype: TreeNode
         """
-        self.fake=TreeNode(0)
-        self.fake1=self.fake
-        
+        arr = []
         def inorder(node):
-            if node: 
+            if node:
                 inorder(node.left)
-                node.left=None
-                self.fake.right=node
-                self.fake=node
+                arr.append(node.val)
                 inorder(node.right)
         inorder(root)
-        return self.fake1.right
+        
+        dummy = TreeNode()
+        temp = dummy
+        for num in arr:
+            dummy.right = TreeNode(num)
+            dummy = dummy.right
+        return temp.right
                
                 
 
