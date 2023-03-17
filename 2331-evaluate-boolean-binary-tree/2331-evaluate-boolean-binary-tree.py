@@ -10,19 +10,16 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: bool
         """
-        def check(node):
-            if node:
-                if not node.left and not node.right:
-                    if node.val==0:
-                        return False
-                    else:
-                        return True
-                elif node.val==2:
-                    return check(node.right) or check(node.left)
-                else:
-                    return check(node.right) and check(node.left)
-            else: return True
-        self.ans=check(root)
-        return self.ans
+        if not root.left and not root.right:
+            return bool(root.val)
+        boolean = root.val
+        
+    
+        if boolean == 2:
+            return bool(self.evaluateTree(root.left) or self.evaluateTree(root.right))
+        else:
+            return bool(self.evaluateTree(root.left) and self.evaluateTree(root.right))
+        
+        
                 
         
