@@ -12,13 +12,21 @@ class Solution(object):
         :type high: int
         :rtype: int
         """
-        self.ans=0
-        def inorder(node,ans=0):
-            if node:
-                inorder(node.left)
-                if low<=node.val<=high:
-                    self.ans+=node.val
-                inorder(node.right)
-        inorder(root)
-        return self.ans
+        stack = []
+        rangeSum = 0
+        current = root
+        
+        while current or stack:
+            
+            while current:
+                
+                stack.append(current)
+                current = current.left
+            popped = stack.pop()
+            
+            if low<=popped.val<=high:  
+                rangeSum += popped.val
+            current = popped.right
+        return rangeSum
+                
         
