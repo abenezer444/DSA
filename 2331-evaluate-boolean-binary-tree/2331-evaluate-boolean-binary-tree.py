@@ -10,11 +10,9 @@ class Solution(object):
         :type root: Optional[TreeNode]
         :rtype: bool
         """
-        if not root.left and not root.right:
+        if not root.left:
             return bool(root.val)
         boolean = root.val
-        
-    
         if boolean == 2:
             return bool(self.evaluateTree(root.left) or self.evaluateTree(root.right))
         else:
