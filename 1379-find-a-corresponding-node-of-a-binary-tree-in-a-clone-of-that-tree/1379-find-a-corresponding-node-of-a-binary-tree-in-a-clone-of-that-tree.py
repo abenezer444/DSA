@@ -14,23 +14,19 @@ class Solution(object):
         :rtype: TreeNode
         """
         
-        def inorder(node):
+        self.target = target.val
+        self.ans = None
+        def traverse(node):
             if not node:
                 return 
+            if node.val == self.target:
+                self.ans = node
+                return 
+            traverse(node.left)
+            traverse(node.right)
+        traverse(cloned)
             
-            if node:
-                if node.val == target.val:
-                   
-                    return node
-                left = inorder(node.left)
-                right = inorder(node.right)
-                
-                if left:
-                    return left
-                return right
-     
-        
-        return inorder(cloned)
+        return self.ans
     
         
             
