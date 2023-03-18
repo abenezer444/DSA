@@ -10,20 +10,24 @@ class Solution(object):
         :type root: TreeNode
         :rtype: TreeNode
         """
-        arr = []
-        def inorder(node):
-            if node:
-                inorder(node.left)
-                arr.append(node.val)
-                inorder(node.right)
-        inorder(root)
-        
         dummy = TreeNode()
-        temp = dummy
-        for num in arr:
-            dummy.right = TreeNode(num)
+        ans = TreeNode(right=dummy)
+        stack = []
+   
+        current = root
+        while stack or current:
+            while current:
+                stack.append(current)
+                current = current.left
+            popped = stack.pop()
+            dummy.right = popped
             dummy = dummy.right
-        return temp.right
+            dummy.left = None
+            
+            current = popped.right
+        
+            
+        return ans.right.right
                
                 
 
