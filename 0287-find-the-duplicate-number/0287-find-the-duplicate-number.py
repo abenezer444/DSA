@@ -4,19 +4,10 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        low = 1
-        high = len(nums) - 1
-        
-        while low <= high:
-            cur = (low + high) // 2
-            count = 0
-
-            count = sum(num <= cur for num in nums)
-            if count > cur:
-                duplicate = cur
-                high = cur - 1
+        for i in range(len(nums)):
+            if nums[abs(nums[i])] < 0:
+                return abs(nums[i])
             else:
-                low = cur + 1
+                nums[abs(nums[i])] = -nums[abs(nums[i])]
                 
-        return duplicate
         
