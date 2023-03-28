@@ -7,16 +7,22 @@ class Solution:
         
         def merge(left, right):
             result = []
+            l = 0
+            r = 0
 
-            while left and right:
 
-                if left[0] < right[0]:
-                    result.append(left.pop(0))
+            while l<len(left) and r<len(right):
+
+                if left[l] < right[r]:
+                    result.append(left[l])
+                    l += 1
                 else:
-                    result.append(right.pop(0))
+                    result.append(right[r])
+                    r += 1
+                
 
-            result.extend(left)
-            result.extend(right)
+            result.extend(left[l:])
+            result.extend(right[r:])
 
             return result
 
