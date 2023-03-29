@@ -40,7 +40,7 @@ class Solution:
 
             left_half = mergeSort(left, mid, arr)
             right_half = mergeSort(mid + 1, right, arr)
-
+            #this part can be improved using binary search
             l = r = 0
 
             while l < len(left_half) and r < len(right_half):
