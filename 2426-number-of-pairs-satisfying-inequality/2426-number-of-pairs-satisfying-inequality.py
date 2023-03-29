@@ -20,9 +20,13 @@ class Solution:
                     result.append(right[r])
                     r += 1
                 
-
-            result.extend(left[l:])
-            result.extend(right[r:])
+            while l<len(left):
+                result.append(left[l])
+                l+=1
+            while r<len(right):
+                result.append(right[r])
+                r+=1
+            
 
             return result
 
