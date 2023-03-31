@@ -1,0 +1,17 @@
+t = int(input())
+for i in range(t):
+    printed = False
+    num = int(input())
+    if num == 1:
+        print(3)
+        printed = True
+    elif num%2 == 1 and num!=1:
+        print(1)
+        printed = True
+    else:
+        if 1<<int(bin(num)[::-1].index("1"))==num:
+            print((1<<int(bin(num)[::-1].index("1")))+1)
+        else:
+            print((1<<int(bin(num)[::-1].index("1"))))
+
+
