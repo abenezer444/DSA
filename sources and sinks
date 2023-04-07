@@ -1,0 +1,23 @@
+n = int(input())
+
+grid = []
+
+for i in range(n):
+    grid.append(input().split())
+sources = set()
+sinks = set()
+for row in range(n):
+    for col in range(n):
+        if grid[row][col] == '1':
+            sources.add(row)
+            sinks.add(col)
+
+sources1 = []
+sinks1 = []
+for i in range(n):
+    if i not  in sources:
+        sinks1.append(i+1)
+    if i not in sinks:
+        sources1.append(i+1)
+print(len(sources1),*sources1)
+print(len(sinks1),*sinks1)
