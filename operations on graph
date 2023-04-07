@@ -1,0 +1,11 @@
+from collections import defaultdict
+graph = defaultdict(list)
+vertex = int(input())
+operations = int(input())
+for i in range(operations):
+    ops = list(map(int,input().split()))
+    if len(ops) == 3:
+        graph[ops[1]].append(ops[2])
+        graph[ops[2]].append(ops[1])
+    else:
+        print(*graph[ops[1]])
