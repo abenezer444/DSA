@@ -14,7 +14,7 @@ class Solution:
                     output.append(".".join(cur))
                 return
 
-            for idx in range(start, min(len(s),start+3)):
+            for idx in range(start, len(s)):
                 if validate(start, idx+1):
                     cur.append(s[start:idx+1])
                     backtrack(cur, idx+1)
