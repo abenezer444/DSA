@@ -23,7 +23,7 @@ class Solution:
                     return 
             return 
     
-        for idx in range(len(s)):
+        for idx in range(3):
             if validate(0, idx+1):
                 backtrack([s[:idx+1]], idx + 1)
         return output
