@@ -1,5 +1,7 @@
 class Solution:
     def restoreIpAddresses(self, s: str) -> List[str]:
+        if len(s) < 4 or len(s) > 12:
+            return []
         output = []
         
         def validate(start, end):
