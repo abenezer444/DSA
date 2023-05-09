@@ -1,34 +1,31 @@
 class Solution:
-    directions = [(-1, 0), (0, -1), (0, 1), (1, 0)]
-    
-    def inbound(self, x, y, m, n):
-        return 0 <= x < m and 0 <= y < n
-    
     def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
-        m, n = len(mat), len(mat[0])
-        distance_mat = [[0 for i in range(n)] for j in range(m)]
         
-        frontier = deque()
+        directions = [(0,1),(1,0),(0,-1),(-1,0)]
+        result = [[-1] * len(mat[0]) for _ in range(len(mat))]
+        
+        queue = deque()
         visited = set()
         
-        for r in range(m):
-            for c in range(n):
-                if mat[r][c] == 0:
-                    frontier.append((r, c, 0))
-                    visited.add((r, c))
-        
-        while frontier:
-            r, c, dist = frontier.popleft()
-            
-            if mat[r][c] == 1:
-                distance_mat[r][c] = dist
-            
-            for dx, dy in self.directions:
-                nr, nc = r + dx, c + dy
+        def inbound(row,col):
+            return 0<=row<len(mat) and 0<=col<len(mat[0])
+        for i in range(len(mat)):
+            for j in range(len(mat[0])):
+                if mat[i][j] == 0:
+                    queue.append(((i,j),0))
+                    visited.add((i,j))
                 
-                if not self.inbound(nr, nc, m, n) or (nr, nc) in visited: continue
-                visited.add((nr, nc))
-                
-                frontier.append((nr, nc, dist + 1))
         
-        return distance_mat
+        while queue:
+            pos,depth = queue.popleft()
+            
+            
+            result[pos[0]][pos[1]] = depth
+            for x,y in directions:
+                new_row = y + pos[0]
+                new_col = x + pos[1]
+                if inbound(new_row,new_col)  and (new_row,new_col) not in visited:
+                    queue.append(((new_row,new_col),depth + 1))
+                    visited.add((new_row,new_col))
+        return result
+            
