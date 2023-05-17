@@ -4,7 +4,8 @@ class Solution:
         
         def find(x):
             if rep[x] != x:
-                return find(rep[x])
+                rep[x] = find(rep[x])
+                return rep[x]
             return x
 
          
