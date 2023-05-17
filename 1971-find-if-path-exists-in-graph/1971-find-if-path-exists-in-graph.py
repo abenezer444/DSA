@@ -1,24 +1,29 @@
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
-        graph = defaultdict(list)
-        for edge in edges:
-            graph[edge[0]].append(edge[1])
-            graph[edge[1]].append(edge[0])
+        rep = {i:i for i in range(n)}
         
-        visited = set()
-        def dfs(vertex, visited):
-            if vertex == destination:
-                return True
-            
-            visited.add(vertex)
-            
-            for neighbour in graph[vertex]:
-                if neighbour not in visited:
-                    
-                    if dfs(neighbour, visited):
-                        return True
-            return False
+        def find(x):
+            if rep[x] != x:
+                return find(rep[x])
+            return x
+
+         
+		
+        def union(x, y):
+            xrep = find(x)
+            yrep = find(y)
+
+            rep[yrep] = xrep
+
+
+
+        def connected(x, y):
+            return find(x) == find(y)
+        for a,b in edges:
+            union(a,b)
+        return connected(source,destination)
+
+
         
-        return dfs(source,visited)
 
         
