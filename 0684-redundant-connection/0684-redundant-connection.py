@@ -3,7 +3,7 @@ class Solution:
         n = len(edges)
         ans = []
         rep = {i+1:i+1 for i in range(n)}
-        
+        size = [1]*n
        
         def find(x):
             if rep[x] != x:
@@ -17,9 +17,13 @@ class Solution:
     
             xrep = find(x)
             yrep = find(y)
+            if size[xrep-1] < size[yrep-1]:
+                size[xrep-1],size[yrep-1] = size[yrep-1],size[xrep-1]
+                
             if xrep == yrep:
                 ans.append([x,y])
             rep[yrep] = xrep
+            size[x-1] += size[yrep-1]
 
             
 
