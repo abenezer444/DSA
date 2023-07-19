@@ -6,8 +6,11 @@
 #         self.right = right
 class Solution:
     def rob(self, root: Optional[TreeNode]) -> int:
-        @cache
+        memo = {}
+      
         def recur(node):
+            if node in memo:
+                return memo[node]
             if not node:
                 return 0
             if not node.left and not node.right:
@@ -16,6 +19,7 @@ class Solution:
             right = node.val + (recur(node.right.left)+recur(node.right.right)) if node.right else node.val
             pick = left+right-node.val
             notPick = recur(node.left) + recur(node.right)
-            return max(pick,notPick)
+            memo[node] = max(pick,notPick)
+            return memo[node]
         return recur(root)
         
