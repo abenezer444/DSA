@@ -1,8 +1,6 @@
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
-    
-        def isInBound(row,col):
-            return row < m and col < n
+
         grid = [[0 for i in range(n)] for i in range(m) ]
         for i in range(1,m):
             for j in range(1,n):
