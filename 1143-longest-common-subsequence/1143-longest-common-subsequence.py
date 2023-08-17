@@ -1,12 +1,12 @@
 class Solution:
     def longestCommonSubsequence(self, text1: str, text2: str) -> int:
-        @cache
-        def recur(index1,index2):
-            if index1 < 0 or index2 < 0:
-                return 0
-            if text1[index1] == text2[index2]:
-                return 1 + recur(index1 - 1,index2 - 1)
-            
-            return max(recur(index1 - 1,index2),recur(index1,index2 - 1))
-        return recur(len(text1) - 1,len(text2) - 1)
+        dp = [[0 for i in range(len(text1)+1)] for j in range(len(text2)+1)]
+   
+        for i in range(len(text2) - 1,-1,-1):
+            for j in range(len(text1) - 1,-1,-1):
+                if text1[j] == text2[i]:
+                    dp[i][j] += 1 + dp[i+1][j+1]
+                else:
+                    dp[i][j] += max(dp[i+1][j],dp[i][j+1])
+        return dp[0][0]
         
