@@ -1,30 +1,33 @@
 class Solution:
-    def findMinHeightTrees(self, n, edges):
-        def dfs_helper(start, n):
-            self.dist, self.parent = [-1]*n, [-1]*n
-            self.dist[start] = 0
-            dfs(start)
-            return self.dist.index(max(self.dist))
+    def findMinHeightTrees(self, n: int, edges: List[List[int]]) -> List[int]:
+        if n == 1:
+            return [0]
         
-        def dfs(start):
-            for neib in Graph[start]:
-                if self.dist[neib] == -1:
-                    self.dist[neib] = self.dist[start] + 1
-                    self.parent[neib] = start
-                    dfs(neib)
-                    
-        Graph = defaultdict(set)
-        for a,b in edges:
-            Graph[a].add(b)
-            Graph[b].add(a)
-        
-        ind = dfs_helper(0,n)
-        ind2 = dfs_helper(ind, n)
-        
-        path = []
-        while ind2 != -1:
-            path.append(ind2)           #backtracking to create path
-            ind2 = self.parent[ind2]
-            
-        Q = len(path)
-        return list(set([path[Q//2], path[(Q-1)//2]]))
+        graph = defaultdict(list)
+        indegree = [0]*n
+        for i, j in edges:
+            graph[i].append(j)
+            graph[j].append(i)
+            indegree[i] += 1
+            indegree[j] += 1
+        level = []
+        visited = set()
+        for num in range(n):
+            if indegree[num] == 1:
+                level.append(num)
+                visited.add(num)
+        res = level[:]
+        while level:
+            newLevel = []
+            for i in range(len(level)):
+                node = level.pop()
+                visited.add(node)
+                for neigh in graph[node]:
+                    if neigh not in visited:
+                        indegree[neigh] -= 1
+                        if indegree[neigh] == 1:
+                            newLevel.append(neigh)
+            if len(newLevel) > 0:
+                res = newLevel[:]
+            level = newLevel            
+        return res
