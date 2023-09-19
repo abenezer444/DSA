@@ -1,17 +1,15 @@
-class Solution:
-    def minCostClimbingStairs(self, cost: List[int]) -> int:
+class Solution(object):
+    def minCostClimbingStairs(self, cost):
+        """
+        :type cost: List[int]
+        :rtype: int
+        """
+        ans = [float('inf')] * (len(cost))
+        ans[0] = cost[0]
+        ans[1] = cost[1]
+        for i in range(2, len(cost)):
+            ans[i] = min(ans[i-1],ans[i-2]) + cost[i]
         
-        dp = defaultdict(int)
-        
-        def findMin(stair,dp={}):
-            
-            if stair <= 1:
-                return cost[stair]
-            if stair in dp:
-                return dp[stair]
-            else:
-                dp[stair] = cost[stair] + min(findMin(stair-1,dp),findMin(stair-2,dp))
-            return dp[stair]
-                                          
-        return min(findMin(len(cost)-1),findMin(len(cost)-2))
+        return min(ans[-1],ans[-2])
+
         
