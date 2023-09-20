@@ -5,8 +5,7 @@ class Solution:
         def recur(left,right,index):
             if index >= len(multipliers):
                 return 0
-            if right == left:
-                return nums[left] * multipliers[index]
+            
             
             
             leftSum = (nums[left] * multipliers[index]) + recur(left + 1, right, index + 1)
