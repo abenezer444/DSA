@@ -11,8 +11,7 @@ class Solution:
                 if pairs[j][1] <= pairs[i][1]:
                     dp[i] = max(dp[i], pairs[i][0] + dp[j])
 
-        print(pairs)
-        print(dp)
+       
         return max(dp)
     
         
