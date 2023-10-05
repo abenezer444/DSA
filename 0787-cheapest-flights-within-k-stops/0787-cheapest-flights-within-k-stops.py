@@ -7,9 +7,7 @@ class Solution:
             graph[start].append([weight,end])
         
         
-        distances = {node:[float(inf),0] for node in range(n)}
         
-        distances[src] = [0,0]
         
         heap = [[0,src,-1]]
         
