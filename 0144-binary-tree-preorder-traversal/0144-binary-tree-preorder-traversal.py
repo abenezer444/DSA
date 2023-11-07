@@ -13,7 +13,8 @@ class Solution:
         while cur or stack:
             if cur:
                 ans.append(cur.val)
-                stack.append(cur.right)
+                if cur.right:
+                    stack.append(cur.right)
                 cur = cur.left
             else:
                 cur = stack.pop()
