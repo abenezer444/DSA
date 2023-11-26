@@ -9,13 +9,7 @@ class DoublyLinkedList:
         self.rear = Node(-1)
         
         self.front.next, self.rear.prev = self.rear, self.front
-    def show(self):
-        nodes = []
-        cur = self.front
-        while cur:
-            nodes.append(str(cur.val))
-            cur = cur.next
-        print('->'.join(nodes))
+    
     def get_top_k(self, k):
       
         cur = self.front.next
