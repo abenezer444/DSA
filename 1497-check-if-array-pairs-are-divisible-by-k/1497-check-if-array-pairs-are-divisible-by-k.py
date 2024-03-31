@@ -6,13 +6,14 @@ class Solution:
     
             
             cur_mod = num % k
+            compliment = (k - cur_mod) % k
             
-            if (k - cur_mod) % k in remainder_map:
+            if compliment in remainder_map:
                 pairs += 1
-                remainder_map[(k - cur_mod) % k] -= 1
+                remainder_map[compliment] -= 1
                 
-                if not remainder_map[(k - cur_mod) % k]:
-                    del remainder_map[(k - cur_mod) % k]
+                if not remainder_map[compliment]:
+                    del remainder_map[compliment]
             else:
                 remainder_map[cur_mod] += 1
        
