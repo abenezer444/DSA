@@ -1,51 +1,62 @@
+class UnionFind:
+    def __init__(self, size):
+        self.parent = {i:i for i in range(size)}
+        
+    def find(self, node):
+        if self.parent[node] == node:
+            return node
+        
+        self.parent[node] = self.find(self.parent[node])
+        return self.parent[node]
+        
+    def union(self, node1, node2):
+        parent1 = self.find(node1)
+        parent2 = self.find(node2)
+        
+        if parent1 ==  parent2:
+            return True
+        self.parent[parent1] = self.parent[parent2]
+        return False
+
+
 class Solution:
     def distanceLimitedPathsExist(self, n: int, edgeList: List[List[int]], queries: List[List[int]]) -> List[bool]:
         
-        parent = [i for i in range(n)]
+        union = UnionFind(n)
         
-        def find(node):
-            if parent[node] == node:
-                return node
-            parent[node] = find(parent[node])
-            
-            return parent[node]
+        indexed = []
         
-        def union(node1, node2):
-            parent1 = find(node1)
-            parent2 = find(node2)
-            
-            if parent1 != parent2:
-                parent[parent1] = parent2
-                
-        queries_indexed = []
+        for index, edge in enumerate(queries):
+            a, b, weight = edge
+            indexed.append((weight,a,b,index))
+        indexed.sort()
         
-        for index,query in enumerate(queries):
-            
-            node1, node2, weight = query
-            
-            queries_indexed.append([index, node1, node2, weight])
-      
-                
         edgeList.sort(key = lambda x:x[2])
         
-        queries_indexed.sort(key = lambda x:x[-1])
+        ans = [False]*len(queries)
+        
        
-        
-        possible_index = 0
-        
-        ans = [False] * len(queries)
-        
-        for index, node1, node2, weight in queries_indexed:
-          
+        cur_index = 0
+       
+        for weight,a,b,index in indexed:
             
-            while possible_index < len(edgeList) and weight > edgeList[possible_index][2]:
+            while cur_index < len(edgeList) and weight > edgeList[cur_index][-1]:
                 
-                union(edgeList[possible_index][0],edgeList[possible_index][1])
-                possible_index += 1
                 
-            if find(node1) == find(node2):
+                union.union(edgeList[cur_index][0],edgeList[cur_index][1])
+                cur_index += 1
+            
+            
+            if union.find(a) == union.find(b):
                 ans[index] = True
         return ans
+            
+    
+                
+        
+            
+        
+        
         
         
         
