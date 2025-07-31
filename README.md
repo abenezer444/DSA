@@ -20,6 +20,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0005-longest-palindromic-substring](https://github.com/abenezer444/DSA/tree/master/0005-longest-palindromic-substring) |
+| [0934-bitwise-ors-of-subarrays](https://github.com/abenezer444/DSA/tree/master/0934-bitwise-ors-of-subarrays) |
 ## Hash Table
 |  |
 | ------- |
@@ -28,6 +29,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0027-remove-element](https://github.com/abenezer444/DSA/tree/master/0027-remove-element) |
+| [0934-bitwise-ors-of-subarrays](https://github.com/abenezer444/DSA/tree/master/0934-bitwise-ors-of-subarrays) |
 | [2498-smallest-subarrays-with-maximum-bitwise-or](https://github.com/abenezer444/DSA/tree/master/2498-smallest-subarrays-with-maximum-bitwise-or) |
 ## Binary Search
 |  |
@@ -36,6 +38,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Bit Manipulation
 |  |
 | ------- |
+| [0934-bitwise-ors-of-subarrays](https://github.com/abenezer444/DSA/tree/master/0934-bitwise-ors-of-subarrays) |
 | [2498-smallest-subarrays-with-maximum-bitwise-or](https://github.com/abenezer444/DSA/tree/master/2498-smallest-subarrays-with-maximum-bitwise-or) |
 ## Sliding Window
 |  |
