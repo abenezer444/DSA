@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0007-reverse-integer](https://github.com/abenezer444/DSA/tree/master/0007-reverse-integer) |
 | [0013-roman-to-integer](https://github.com/abenezer444/DSA/tree/master/0013-roman-to-integer) |
+| [0826-soup-servings](https://github.com/abenezer444/DSA/tree/master/0826-soup-servings) |
 ## Two Pointers
 |  |
 | ------- |
@@ -20,6 +21,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0005-longest-palindromic-substring](https://github.com/abenezer444/DSA/tree/master/0005-longest-palindromic-substring) |
+| [0826-soup-servings](https://github.com/abenezer444/DSA/tree/master/0826-soup-servings) |
 | [0934-bitwise-ors-of-subarrays](https://github.com/abenezer444/DSA/tree/master/0934-bitwise-ors-of-subarrays) |
 ## Hash Table
 |  |
@@ -79,4 +81,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [3790-fruits-into-baskets-ii](https://github.com/abenezer444/DSA/tree/master/3790-fruits-into-baskets-ii) |
 | [3791-fruits-into-baskets-iii](https://github.com/abenezer444/DSA/tree/master/3791-fruits-into-baskets-iii) |
+## Probability and Statistics
+|  |
+| ------- |
+| [0826-soup-servings](https://github.com/abenezer444/DSA/tree/master/0826-soup-servings) |
 <!---LeetCode Topics End-->
