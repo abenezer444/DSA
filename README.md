@@ -35,6 +35,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | [0934-bitwise-ors-of-subarrays](https://github.com/abenezer444/DSA/tree/master/0934-bitwise-ors-of-subarrays) |
 | [2229-maximum-fruits-harvested-after-at-most-k-steps](https://github.com/abenezer444/DSA/tree/master/2229-maximum-fruits-harvested-after-at-most-k-steps) |
 | [2498-smallest-subarrays-with-maximum-bitwise-or](https://github.com/abenezer444/DSA/tree/master/2498-smallest-subarrays-with-maximum-bitwise-or) |
+| [2529-range-product-queries-of-powers](https://github.com/abenezer444/DSA/tree/master/2529-range-product-queries-of-powers) |
 | [2689-rearranging-fruits](https://github.com/abenezer444/DSA/tree/master/2689-rearranging-fruits) |
 | [3790-fruits-into-baskets-ii](https://github.com/abenezer444/DSA/tree/master/3790-fruits-into-baskets-ii) |
 | [3791-fruits-into-baskets-iii](https://github.com/abenezer444/DSA/tree/master/3791-fruits-into-baskets-iii) |
@@ -50,6 +51,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0934-bitwise-ors-of-subarrays](https://github.com/abenezer444/DSA/tree/master/0934-bitwise-ors-of-subarrays) |
 | [2498-smallest-subarrays-with-maximum-bitwise-or](https://github.com/abenezer444/DSA/tree/master/2498-smallest-subarrays-with-maximum-bitwise-or) |
+| [2529-range-product-queries-of-powers](https://github.com/abenezer444/DSA/tree/master/2529-range-product-queries-of-powers) |
 ## Sliding Window
 |  |
 | ------- |
@@ -67,6 +69,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [2229-maximum-fruits-harvested-after-at-most-k-steps](https://github.com/abenezer444/DSA/tree/master/2229-maximum-fruits-harvested-after-at-most-k-steps) |
+| [2529-range-product-queries-of-powers](https://github.com/abenezer444/DSA/tree/master/2529-range-product-queries-of-powers) |
 ## Segment Tree
 |  |
 | ------- |
