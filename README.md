@@ -6,6 +6,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 | ------- |
 | [0007-reverse-integer](https://github.com/abenezer444/DSA/tree/master/0007-reverse-integer) |
 | [0013-roman-to-integer](https://github.com/abenezer444/DSA/tree/master/0013-roman-to-integer) |
+| [0342-power-of-four](https://github.com/abenezer444/DSA/tree/master/0342-power-of-four) |
 | [0826-soup-servings](https://github.com/abenezer444/DSA/tree/master/0826-soup-servings) |
 ## Two Pointers
 |  |
@@ -50,6 +51,7 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 ## Bit Manipulation
 |  |
 | ------- |
+| [0342-power-of-four](https://github.com/abenezer444/DSA/tree/master/0342-power-of-four) |
 | [0934-bitwise-ors-of-subarrays](https://github.com/abenezer444/DSA/tree/master/0934-bitwise-ors-of-subarrays) |
 | [2498-smallest-subarrays-with-maximum-bitwise-or](https://github.com/abenezer444/DSA/tree/master/2498-smallest-subarrays-with-maximum-bitwise-or) |
 | [2529-range-product-queries-of-powers](https://github.com/abenezer444/DSA/tree/master/2529-range-product-queries-of-powers) |
@@ -89,4 +91,8 @@ A collection of LeetCode questions to ace the coding interview! - Created using 
 |  |
 | ------- |
 | [0826-soup-servings](https://github.com/abenezer444/DSA/tree/master/0826-soup-servings) |
+## Recursion
+|  |
+| ------- |
+| [0342-power-of-four](https://github.com/abenezer444/DSA/tree/master/0342-power-of-four) |
 <!---LeetCode Topics End-->
